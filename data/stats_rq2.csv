@@ -1,0 +1,7 @@
+metric,label,kruskal_H,kruskal_p,kruskal_sig,pair,mwu_U,p_raw,p_holm,sig_holm,cliffs_delta,magnitude
+median_commits_per_month,Change frequency (commits/month),0.507,0.776,False,MVP vs MVVM,32.0,0.7503,1.0,False,-0.111,negligible
+median_commits_per_month,Change frequency (commits/month),0.507,0.776,False,MVP vs MVI,24.0,0.5622,1.0,False,-0.2,small
+median_commits_per_month,Change frequency (commits/month),0.507,0.776,False,MVVM vs MVI,53.0,0.6682,1.0,False,-0.117,negligible
+median_churn_per_sloc,Churn per SLOC,1.218,0.5439,False,MVP vs MVVM,33.0,0.8201,1.0,False,-0.083,negligible
+median_churn_per_sloc,Churn per SLOC,1.218,0.5439,False,MVP vs MVI,35.0,0.6252,1.0,False,0.167,small
+median_churn_per_sloc,Churn per SLOC,1.218,0.5439,False,MVVM vs MVI,77.0,0.2765,0.8294,False,0.283,small

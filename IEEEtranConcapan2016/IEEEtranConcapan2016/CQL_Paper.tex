@@ -1,0 +1,913 @@
+
+%% CQL
+%% bare_conf.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[conference]{IEEEtran}
+
+\usepackage{multirow}
+% Some Computer Society conferences also require the compsoc mode option,
+% but others use the standard conference format.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+%\usepackage{authblk}
+
+\begin{document}
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+%%\title{Bare Demo of IEEEtran.cls\\ for IEEE Conferences}
+\title{COSMIC Base Functional Components in \\Functional Size Based Effort Estimation Models}
+
+
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+
+\author{\IEEEauthorblockN{
+Christian Quesada-L\'opez\IEEEauthorrefmark{1},
+Juan Murillo-Morera\IEEEauthorrefmark{1}, 
+Carlos Castro-Herrera\IEEEauthorrefmark{2} and
+Marcelo Jenkins\IEEEauthorrefmark{1}}
+\IEEEauthorblockA{
+\IEEEauthorrefmark{1}Center for ICT Research, University of Costa Rica, \\ Email: \{cristian.quesadalopez, juan.murillomorera, marcelo.jenkins\}@ucr.ac.cr \\
+\IEEEauthorrefmark{2}Intel Corporation, Costa Rica \\ Email: carlos.castro.herrera@intel.com}}
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+Software effort estimation models has been an area of considerable research for many years and it is still a challenge for software engineering. Although Functional Size Measurement (FSM) methods have become widely used, effort estimation based on the functional size still needs further research. Unbiased and comprehensive comparison between prediction models is needed. Some studies suggest that the relationship between effort and the base functional components of a FSM method would improve estimation models. This paper evaluates the structure of COSMIC FFP base functional components and its applicability in functional size based effort estimation models. Our study reports a benchmarking experiment evaluating 600 learning schemes for 12 ISBSG R12 sub datasets in business application projects which were sized by the COSMIC FSM method. In total, 7,200 runs were conducted (Learning schemes X Datasets) and the best learning schemes were reported by dataset. Lessons learned after conducting the experiment are discussed.
+\end{abstract}
+
+% no keywords
+\begin{IEEEkeywords}
+base functional components,
+business application,
+software functional size measurement,
+effort estimation,
+machine learning, 
+experimental procedure.
+\end{IEEEkeywords}
+%\keywords{}
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that the IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command,
+% and the \label for the overall figure must come after \caption.
+% \hfil is used as a separator to get equal spacing.
+% Watch out that the combined width of all the subfigures on a 
+% line do not exceed the text width or a line break will occur.
+%
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+%\label{fig_second_case}}
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat[]), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
+% labels, the optional argument to \subfloat must be present. If a
+% subcaption is not desired, just leave its contents blank,
+% e.g., \subfloat[].
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table and, given that table
+% captions serve much like titles, are usually capitalized except for words
+% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
+% and up, which are usually not capitalized unless they are the first or
+% last word of the caption. Table text will default to \footnotesize as
+% the IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that the IEEE does not put floats in the very first column
+% - or typically anywhere on the first page for that matter. Also,
+% in-text middle ("here") positioning is typically not used, but it
+% is allowed and encouraged for Computer Society conferences (but
+% not Computer Society journals). Most IEEE journals/conferences use
+% top floats exclusively. 
+% Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the
+% \fnbelowfloat command of the stfloats package.
+
+\section{Introduction} \label{sec:Introduction}
+% no \IEEEPARstart
+
+Software effort estimation models is still a challenge for software engineering \cite{dejaeger:2012} and effort estimation based on the functional size still needs further research \cite{Gencel:2008}. Several estimation models have been evaluated in the literature using different techniques, with different results, in different contexts \cite{dejaeger:2012}. One of the main issues is about which could be the right data from an historical dataset to use in order to obtain reliable estimates \cite{GencelBuglione:2008}. In addition, unbiased and comprehensive comparison between prediction models is needed. One of the main problems with evaluating techniques using one or two datasets is that one cannot be sure that the specific datasets were not selected because they are the ones that favor the new technique \cite{Kitchenham:2009}.
+
+Most of the studies consider total software functional size as the primary input to estimation models, and they mostly focus on identifying the project parameters which might have a significant effect on the size-effort relationship. However, some studies suggest that the relationship between effort and the base functional components of a FSM method would simplify or improve estimation models \cite{Gencel:2008} \cite{GencelBuglione:2008} \cite{GencelBuglione:2008a} \cite{Lavazza:2013} \cite{QuesadaLopez:2016} \cite{MurilloMorera:2016} \cite{QuesadaLopez:2015} \cite{QuesadaLopez:2014}. Different context attributes such as the Development Type and Application Type as well as the Base Functional Component (BFC) could provide improvements in the performance of the estimations. Literature shows that there is a need for further empirical studies on the cost drivers and the reliability of effort estimation models \cite{GencelBuglione:2008a}.
+
+This paper evaluates the structure and applicability of COSMIC FFP for business application projects. First, functional size was analyzed in order to determine the extent to which the basic functional components (BFC) were independent of each other and thus appropriate for an additive model of size. Second, the correlations among effort and BFCs and function points were assessed in order to determine whether a simplified sizing metric might be appropriate to simplify effort estimation models. Finally, the effort models were constructed and evaluated in order to analyze whether effort estimation models based on BFCs types, rather than those based on a single total, would simplify or improve estimation models.
+
+Our study reports a benchmarking experiment evaluating 600 learning schemes combining 8 data preprocessing X 5 attribute selectors X 15 learning algorithms for 12 ISBSG R12 sub datasets using COSMIC FFP in business application projects. Twelve software effort datasets were analyzed executing an N PASS (10 times) and a M X N-fold cross-validation (10 X 10) for each learning scheme. An automated prototype tool that implements an exhaustive framework for software effort prediction using several machine learning techniques was used to collect data and obtain the results \cite{QuesadaLopezMurilloMorera:2016}.
+
+The remainder of the paper is structured as follows: Section \ref{sec:Background} provides the foundations about COSMIC function points as a measure of software functional size. Section \ref{sec:EmpiricalStudy} describes the current empirical study. Section \ref{sec:AnalysisInterpretationResults} presents the results of the experiment. Finally, Section \ref{sec:DiscussionConclusions} discusses the results, and outlines the conclusions and future work.
+
+%\hfill mds
+ 
+%\hfill August 26, 2015
+
+\section{Background} \label{sec:Background}
+
+Many functional size measurement (FSM) methods have been proposed to quantify the size of software based on functional user requirements (user perspective). Functional size is defined as "a size of the software derived by quantifying the functional user requirements" \cite{ISOP1:2007}. Function point analysis (FPA) \cite{Albrecht:1979} was the first proposal for a FSM method and it is one of the most used methods in the industry. The International Function Point User Group Function Point Analysis (FPA) \cite{ISO:2009}, is a refinement of the very first method for functionality measurement proposed by Allan Albrecht \cite{Albrecht:1979}. Software size has proved to be one of the main effort-and-cost drivers and it is widely accepted that software functional size is one of the key factors that has the potential to affect the effort and cost of software projects.
+
+COSMIC-FFP \cite{COSMIC:2007} was adopted in 2003 as ISO 19761 \cite{ISO:2003}. It is defined as the 2nd generation of FSM methods as a result of a series of innovations, such as: a better fit with both real-time and MIS environments (business  application), identification and measurement of multiple software layers, different perspectives (viewpoints) from which the software can be measured, and the absence of a weighting system as in FPA \cite{GencelBuglione:2008}.
+
+FSM methods analyze software requirements, transactions and data that are meaningful to the final user, which are identified and classified in a set of basic functional size components (BFC) and counted according to a defined criteria. In COSMIC-FFP process \cite{COSMIC:2007}, the Functional User Requirements (FURs) are decomposed in functional processes that represents an elementary component of a set of FUR comprising a unique, cohesive and independently executable set of data movements \cite{Gencel:2008}. A data movement is defined as a BFC, which moves one or more data attribute types belonging to a single data group type. There are four kinds of data movement types defined as a BFC: Entry (E), Exit (X), Read (R), and Write (W) \cite{COSMIC:2007}:
+
+\begin{description}
+  \item[(E)] moves a data group from a functional user across the boundary into the functional process where it is required.
+  \item[(X)] moves a data group from a functional process across the boundary to the functional user that requires it.
+  \item[(R)] moves a data group from persistent storage within reach of the functional process which requires it.
+  \item[(W)] moves a data group lying inside a functional process to persistent storage.
+\end{description}
+
+After identifying the BFC of the Functional Processes, the second step involves calculating the functional size of each BFC and then the results are aggregated to compute the overall size of the software application. Each of these BFC Types represents different types of functionalities to be provided to the users \cite{Gencel:2008}.
+
+%\section{Related Work}
+
+\section{Empirical Study} \label{sec:EmpiricalStudy}
+
+The empirical process was conducted following the guidelines for experimentation in software engineering proposed by Wohlin \cite{Wohlin:2012}.
+
+\subsection{Overview of the Empirical Study}
+The overall process consisted of the following steps:
+
+\begin{description}
+  \item[(1)] Data selection and preprocessing: the original dataset was preprocessed to obtain the appropriate data points and variables for the experiment.
+  \item[(2)] FP and BFCs evaluation: total function points and BFC were examined to determine which of these BFCs are independent from each other and thus appropriate for an additive model of size. Relationship between size in FP and BFCs, and effort were evaluated.
+  \item[(3)] Model evaluation: estimation models based on FP and BFCs were evaluated to determine the accuracy of the estimates and the best models by dataset.
+\end{description}
+
+\subsection{Dataset Selection}
+
+Twelve subsets of data was processed from the ISBSG R12 database. Projects for which all functional components were missing were discarded. Nominal variables were transformed by dummy coding, where each variable was coded as a 0 or 1 by applying a nominal to binary filter. As a result of the selection, a total of 63 business application projects were identified from the MIS domain developed between 2005 and 2011, from multiple companies, using the COSMIC FFP counting method and reported as A or B in data quality. The dataset were split manually in 6 subsets of data depending of its components. For a second dataset, outliers were evaluated using a Cooks distance test \cite{Cook:2000}. After the analysis, 10 outliers identified were removed because this reduction of the dataset improved the fit of the models. This study was conservative to remove the outliers from the data set to prevent the possibility of extreme values distorting the derived regression equations for effort models. The second dataset were split manually in 6 subsets of data depending of its components. Table \ref{DSAttr} provides an overview of the datasets, including number of attributes (size and context), and their variables. The datasets contain a set of attributes that can be categorized in size attributes, context information (development team size, domain, technical aspects [programming language, type of database system]), and others. The list of context variables is shown in Table \ref{ISBSGDatasetVariablesStudy}. Table \ref{DSDSC} provides descriptive statistics for each dataset. The number of observations, mean, minimum, percentiles, maximum, range, standard deviation, skewness and kurtosis of size measures and effort is given. In total 12 subdatasets were used in the analysis named DS53-1 to DS53-6 and DS63-6 to DS63-12.
+
+\begin{table}
+\centering
+\caption{ISBSG Dataset Variables used in this Study}
+\label{ISBSGDatasetVariablesStudy}
+\begin{tabular}{|l|l|}\hline
+\textbf{Variable}&\textbf{Description}\\\hline
+Development Type&Enhancement, New Development, Re-dev.\\
+Relative Size&1. XXS, 2. XS, 3. S, 4. M1, 5. M2, 6. L.\\
+Team Size Group&2, 3-4, 5-8, 9-14, 15-20, 21-30, 31-40, 61-70\\
+Development Platf&Multi, MF, PC, MR.\\
+Architecture&Client server, Stand alone, Multi-tier with web \\
+&public interface, Multi-tier, Stand-alone.\\
+Language Type&3GL, ApG, 4GL.\\
+Program Language&Java, COOL:Gen, ASP.Net, C\#, JavaScript, \\
+                 & PL/I, Visual Basic, PowerBuilder, ASP, SQL \\
+                 &Visual Studio .Net, Datastage, .Net, IBM WTX \\
+                 &XML, COBOL, AB INITIO, A:G, C++, ABAP\\\hline
+\end{tabular}
+%}
+\end{table}
+
+\begin{table}
+\centering
+\caption{Number of Attributes for Each DataSet}
+\label{DSAttr}
+%\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|l|r|r|r|l|}\hline
+\textbf{DS} &  \textbf{Total} & \textbf{Size} & \textbf{Context} & \textbf{Variables}\\\hline
+1,7 &  1     & 1    & 0  &  FP   \\
+2,8 & 24     & 2    & 22 &  FP, BandSize, Context  \\
+3,9 &  4     & 4    & 0  &  E, X, R, W   \\
+4,10 & 27     & 5    & 22 &  E, X, R, W, BandSize, Context \\
+5,11 & 23     & 1    & 22 &  FP, Context  \\
+6,12 & 26     & 4    & 22 &  FP, Context  \\\hline
+\end{tabular}
+%}
+\end{table}
+
+\begin{table*}
+\centering
+\caption{DataSet (DS) Descriptive Statistics}
+\label{DSDSC}
+%\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|r|l|r|r|r|r|r|r|r|r|r|r|r|r|r|r|}\hline
+
+\textbf{DS}    & \textbf{N}   & \textbf{Var}       & \textbf{Mean}    & \textbf{Min}    & \textbf{5Q}     & \textbf{10Q}     & \textbf{25Q}     & \textbf{Med}  & \textbf{75Q}     & \textbf{90Q}      & \textbf{95Q}      & \textbf{Max}      & \textbf{Range}    & \textbf{Std.D.} & \textbf{Skew} & \textbf{Kurt} \\\hline
+\multirow{6}{*}{1-6}
+     & 53 & FP  & 97.3    & 2.0  & 2.0  & 3.0  & 5.5   & 43.0   & 123.0   & 293.6   & 481.9    & 579.0    & 577.0    & 140.1   & 2.1  & 4.1  \\
+     & 53 & E   & 17.2    & 1.0  & 1.0  & 1.0  & 1.5   & 6.0    & 23.5    & 53.2    & 64.7     & 96.0     & 95.0     & 22.2    & 1.7  & 2.6  \\
+     & 53 & X   & 28.3    & 0.0    & 0.0    & 0.4  & 1.0   & 3.0    & 31.0    & 107.6   & 134.9    & 231.0    & 231.0    & 47.3    & 2.4  & 6.4  \\
+     & 53 & R   & 33.8    & 0.0    & 0.0    & 1.0  & 1.5   & 16.0   & 46.0    & 94.2    & 177.8    & 198.0    & 198.0    & 49.4    & 2.0  & 3.8  \\
+     & 53 & W   & 18.1    & 0.0    & 0.0    & 0.0    & 0.0     & 4.0    & 31.0    & 45.0    & 65.9     & 193.0    & 193.0    & 31.1    & 3.7  & 18.9 \\
+     &    & Eff & 2400 & 24 & 24 & 40 & 77  & 348  & 1420 & 8875 & 17179 & 21700 & 21676 & 4762 & 2.8  & 7.9  \\\hline 
+\multirow{6}{*}{7-12} 
+     & 63 & FP  & 151.6   & 2.0  & 2.2  & 3.0  & 6.0   & 74.0   & 187.0   & 476.6   & 748.6    & 853.0    & 851.0    & 214.2   & 1.9  & 3.0  \\
+     & 63 & E   & 31.5    & 1.0  & 1.0  & 1.0  & 2.0   & 13.0   & 39.0    & 76.4    & 189.4    & 255.0    & 254.0    & 52.0    & 3.0  & 9.6  \\
+     & 63 & X   & 46.3    & 0.0    & 0.0    & 1.0  & 1.0   & 14.0   & 61.0    & 154.4   & 221.8    & 287.0    & 287.0    & 69.3    & 1.9  & 3.1  \\
+     & 63 & R   & 50.1    & 0.0    & 0.0    & 1.0  & 2.0   & 20.0   & 64.0    & 187.4   & 197.8    & 304.0    & 304.0    & 71.4    & 1.8  & 2.3  \\
+     & 63 & W   & 23.7    & 0.0    & 0.0    & 0.0    & 0.0     & 6.0    & 33.0    & 66.8    & 109.8    & 193.0    & 193.0    & 36.8    & 2.5  & 7.5  \\
+     &    & Eff & 3050 & 24 & 27 & 40 & 123 & 721  & 2929 & 9256 & 18698 & 29246 & 29222 & 5713 & 2.8  & 8.6\\\hline   
+\end{tabular}
+%}%
+\end{table*}
+
+\subsection{Effort Prediction Framework}
+
+Effort estimation models were constructed and evaluated using an automated prototype tool that implements an exhaustive framework proposed in \cite{QuesadaLopezMurilloMorera:2016}. The benchmarking evaluated 600 learning schemes combining 8 data preprocessing $\times$ 5 attribute selectors $\times$ 15 learning algorithms for twelve datasets that were analyzed executing a $N-PASS$ (10 times) and a $M\times N$-fold cross-validation ($10\times10$) for each learning scheme. The implemented framework builds models according to learning schemes and predicts software development effort with new data according to the constructed models. In total, 7,200 runs were conducted (Learning schemes $\times$ Datasets). The framework was implemented in Java using the Waikato Environment for Knowledge Analysis (WEKA) libraries of machine learning \cite{hall2009weka}. The evaluation of the techniques was conducted using WEKA algorithms with their default configuration. 
+
+\subsection{Learning Schemes} \label{sec:LearningSchemes}
+
+The learning schemes are composed of three parts: Data Preprocessing (DP), Attribute Selector (AS), and Learning Algorithm (LA). In total, we tested 600 different learning schemes. Data Preprocessing (DP) techniques are None, Logarithmic (Log), BoxCox $\lambda$=-2 (BC-2), $\lambda$=-1 (BC-1), $\lambda$=-0.5 (BC-0.5), $\lambda$=0.5 (BC0.5), $\lambda$=1 (BC1), and $\lambda$=2 (BC2). Attribute Selector (AS) techniques are Backward Elimination (BE), Forward Selection (FS), BestFirst (BF), LinearForwardSelection (LFS), and GeneticSearch (GS). Learning Algorithm (LA) techniques are GaussianProcesses (GP), LeastMedSq (LMS), LinearRegression (LR), MultilayerPerceptron (MP), RBFNetwork (RBFN), SMOreg (SMO), AdditiveRegression (AR), Bagging (Bag), ConjunctiveRule (CR), DecisionTable (DT), M5-Rules (M5R), ZeroR (ZR), DecisionStump (DS), M5P, and REPTree (RT).
+
+\subsection{Evaluation Criteria} \label{sec:EvaluationCriteria}
+The following statistics were applied according recommendation in \cite{dejaeger:2012}: magnitude of relative error (MRE), magnitude of error relative (MER), balanced relative error (BRE), and number of predictions within \% of the actual ones (Pred25). The MRE value of individual predictions can be averaged, resulting in the Mean MRE (MMRE). The MMRE can be highly affected by outliers. To address this shortcoming, the MdMRE metric has been proposed which is the median of all MREs. MRE is the difference between the actual effort and the predicted effort. This difference should be as small as possible. Large deviations will have a significant impact on the costs related to the development of software. A complementary accuracy measure is Pred. Pred is simply the percentage of estimates that are within $m\%$ of the actual value (the \% of the estimates with MRE $\leq0.25$). Typically $m$ is set to 25 so the indicator reveals what proportion of estimates are within a tolerance of 25\%. Typical Pred25 lies in the range of 10 to 60 percent, while the MdMRE typically attains values between 30 and 100 percent. This evaluation is conducted because the presence of an association does not necessarily imply that an accurate predictive model can be built. Finally, Spearman's rank correlation coefficient is adopted, which is a measure of the relationship between actual and predicted value.
+
+\subsection{Statistical Procedure}
+
+A procedure based on \cite{dejaeger:2012} \cite{Lavazza:2013} \cite{QuesadaLopez:2016} \cite{MurilloMorera:2016} \cite{QuesadaLopez:2015} \cite{QuesadaLopez:2014} was followed to test the results of the experiment. All the statistical data analyses in this study were performed by using Statistical Packages for IBM SPSS Statistics v.21.0. The results are discussed in the Section \ref{sec:AnalysisInterpretationResults}.
+
+\section{Data Analysis and Results} \label{sec:AnalysisInterpretationResults}
+
+\subsection{Internal Consistency of COSMIC FFP}
+
+Table \ref{T10} shows the Kendalls Tau correlation coefficients between all pairs of function point BFCs for the two datasets (53 and 63 projects respectively). The (*) shows that the correlation is significant at the 0.01 level (2-tailed). The results showed that BFCs are not independent and the same results were found evaluation Spearman correlation coefficients between all pairs of BFCs. The analysis found correlations between all pair of BFCs, and between BFCs and function points (E, X, R, W and FP) were all BFC are significantly correlated with FP. Stronger correlations was found between function points (FP) and Entry (E), Exit (X), Read (R), and between Read (R) and Write (W).
+
+\begin{table}
+\centering
+\caption{Kendall Tau Correlation Coefficients between BFCs}
+\label{T10}
+%\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|c|r|r|r|r|}\hline
+\textbf{DS} & \textbf{BFC} & \textbf{FP} & \textbf{E} & \textbf{X} & \textbf{R} \\\hline 
+DS63 & E & .843* &       &       &       \\
+   & X & .809* & .739* &       &       \\
+   & R & .853* & .710* & .698* &       \\
+   & W & .764* & .694* & .583* & .759* \\\hline
+DS53 & E & .830* &       &       &       \\
+   & X & .770* & .680* &       &       \\
+   & R & .863* & .709* & .678* &       \\
+   & W & .774* & .703* & .550* & .737* \\\hline       
+\end{tabular}
+%}%
+\end{table}
+
+\subsection{COSMIC FP and BFCs to predict effort}
+
+Table \ref{T11} shows that all BFCs are significantly correlated with effort. The (*) shows that the correlation is significant at the 0.01 level (2-tailed). The results of this study showed, for example, that Write (W) (Kendall s = 0.726) and Read (R) (Kendall s = 0.728) presented closer correlations as function points (FP) (Kendall s = 0.758). The results provide evidence to suggest that some subset of COSMIC FFP base functional components (BFC) could offer an effort prediction models at least as good as the sum of all the BFCs.
+
+\begin{table}
+\centering
+\caption{Correlation Coefficients between FP, BFCs and Effort}
+\label{T11}
+%\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|r|r|r|r|}\hline
+& \multicolumn{2}{c}{\textbf{DS63}}  & \multicolumn{2}{c}{\textbf{DS53}}\\\hline 
+\textbf{BFC}   & Kendall Tau      & Spearman      & Kendall Tau  & Spearman \\\hline 
+FP & .666* & .847* &  .758* & .911* \\
+E  & .629* & .824* &  .685* & .862* \\
+X  & .600* & .761* &  .646* & .769* \\
+R  & .625* & .809* &  .728* & .888* \\
+W  & .641* & .824* &  .726* & .882*\\\hline 
+\end{tabular}
+%}%
+\end{table}
+
+\subsection{Effort Estimation Models}
+
+In our study, the sub-datasets were first analyzed to determine the strength of the relationship between the total functional size and the development effort by applying a Linear Regression Analysis method. Next, the strength of the relationship between the functional sizes of the COSMIC-FFP BFC Types used to determine effort is analyzed by applying a Multiple Regression Analysis method. Finally, these findings are compared to the models representing the relationship between total functional size and effort.
+
+For the Linear Regression Analysis, the independent variable are Functional Size FP and E, X, R and W. The dependent variable is the Normalized Work Effort value. Preliminary analysis (53 projects) shows evidence that there is a positive relationship between effort and FP and between effort and BFCs. A comparison of regression model results is shown in Table \ref{T9}. This data shows the sensibility of the results depending of the data selection. Results showed a relation between FP and effort, and BFCs and effort. The results supports evidence to suggest that a subset of BFCs may offer an effort prediction model at least as good as FP.
+
+\begin{table}
+\centering
+\caption{Regression Effort Models based on UFP and BFCs}
+\label{T9}
+%\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|r|r|}\hline
+                          &                & \textbf{DS53}  & \textbf{DS63}  \\\hline
+\textbf{Model}                     & \textbf{Based on}       & \multicolumn{2}{c}{\textbf{\(R^2\)}}           \\\hline
+Linear                    & FP             & 0.853 & 0.258 \\
+Non Linear (Power)        & FP             & 0.862 & 0.744 \\
+Multple Linear            & E, X, R, W     & 0.862 & 0.471 \\
+Multple Linear (Backward) & W, X, E        & 0.861 & 0.471 \\
+Multple Linear (Backward) & W, X           & 0.856 &       \\
+Multple Linear (Fordward) & R (53), W (63) & 0.825 & 0.338 \\
+Multple Linear (Fordward) & R, E           & 0.841 &       \\
+Multple Linear (Fordward) & R, E, W        & 0.858 &       \\
+Multple Linear (Stepwise) & R (53), W (63) & 0.825 & 0.338 \\
+Multple Linear (Stepwise) & R, E           & 0.841 &       \\
+Multple Linear (Stepwise) & R, E, W        & 0.858 &  \\\hline 
+\end{tabular}
+%}%
+\end{table}
+
+After preliminary regression model results, a benchmarking experiment evaluating 600 learning schemes (8 data preprocessing X 5 attribute selectors X 15 learning algorithms) for the 12 ISBSG R12 sub datasets were conducted. The frequency of the best models (data preprocessing, attribute selectors, learning algorithms) are presented in Table \ref{TableModels} by each dataset. These models are selected based on the correlation coefficient results. Completed learning scheme results and evaluation metrics for each of the 7,200 runs are available online at https://goo.gl/JRGNtP. The best performing technique is reported in bold and underlined (90 percentile), results that are at 75 percentile are tabulated in boldface font. For each model, data preprocessing (DP), attribute selector (AS), and learning algorithm (LA) are detailed. In addition, the Spearman correlation coefficient, mean magnitude of relative error (MMRE), median magnitude of relative error (MdMRE), mean magnitude of error relative (MMER), mean balanced relative error (MBRE), and Pred25 results are provided. The benchmarking study confirms the results of previous studies in the field, different learning schemes should be selected for different sub datasets. List of learning scheme techniques is detailed in Section \ref{sec:LearningSchemes}. Most common Data Preprocessing (DP) selected is BoxCox (BC), most common Attribute Selectors (AS) are Backward Elimination (BE) and GeneticSearch (GS), and finally most common Learning Algorithm (LA) techniques are Bagging (Bag) and LeastMedSq (LMS).
+
+\begin{table}
+\centering
+\caption{Frequency of the best Estimation Model Techniques}
+\label{TableModels}
+%\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|l|}\hline
+\textbf{DS} & \multicolumn{2}{c}{\textbf{DP}} & \multicolumn{2}{c}{\textbf{AS}} & \multicolumn{2}{c}{\textbf{LA}} \\\hline
+DS53-1  & BC & 75\% & FS  & 24\% & LMS & 25\% \\
+        &    &      & GS  & 29\% & M5P & 13\% \\\hline
+DS53-2  & BC & 67\% & BE  & 26\% & Bag & 37\% \\
+        &    &      & GS  & 24\% & LMS & 24\% \\\hline
+DS53-3  & BC & 75\% & BF  & 23\% & Bag & 25\% \\
+        &    &      & BE  & 21\% & LR  & 25\% \\\hline
+DS53-4  & BC & 66\% & GS  & 25\% & Bag & 27\% \\
+        &    &      & BF  & 23\% & LR  & 23\% \\\hline
+DS53-5  & BC & 61\% & BE  & 26\% & Bag & 37\% \\
+        &    &      & GS  & 26\% & RT  & 20\% \\\hline
+DS53-6  & BC & 65\% & GS  & 33\% & Bag & 39\% \\
+        &    &      & BE  & 26\% & LMS & 17\% \\\hline
+DS63-7  & BC & 70\% & LFS & 27\% & GP  & 16\% \\
+        &    &      & BF  & 21\% & MP  & 16\% \\\hline
+DS63-8  & BC & 70\% & BE  & 22\% & Bag & 41\% \\
+        &    &      & BF  & 22\% & DT  & 24\% \\\hline
+DS63-9  & BC & 98\% & BF  & 23\% & SMO & 30\% \\
+        &    &      & FS  & 23\% & GP  & 21\% \\\hline
+DS63-10 & BC & 62\% & BE  & 22\% & Bag & 51\% \\
+        &    &      & GS  & 22\% & DT  & 22\% \\\hline
+DS63-11 & BC & 61\% & BE  & 26\% & Bag & 39\% \\
+        &    &      & GS  & 24\% & LMS & 20\% \\\hline
+DS63-12 & BC & 69\% & LFS & 25\% & Bag & 53\% \\
+        &    &      & BE  & 20\% & GP  & 15\%\\\hline 
+\end{tabular}
+%}%
+\end{table}
+
+The frequency of the selection of function points (FP), band size (Band) and BFC attributes (Entry, Exit, Read, Write) for each dataset are presented in Table \ref{TableAttributes} by each dataset (DS). Results showed a high percentage in selection of some BFC, these components could be used to construct estimation models with similar performance results to models based on total size of function points.
+
+\begin{table}
+\centering
+\caption{Frequency of Selected FP and BFC Attributes}
+\label{TableAttributes}
+%\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|r|r|r|r|r|r|}\hline
+\textbf{DS}&\textbf{FP} & \textbf{Band} & \textbf{E} & \textbf{X} & \textbf{R} & \textbf{W}\\\hline
+DS53-1  & 100\%  &         &         &         &         &         \\
+DS53-2  & 54.6\%   & 45.9\% &         &         &         &         \\
+DS53-3  &          &         & 69.9\%  & 74.5\%  & 43.6\%  & 86.6\%  \\
+DS53-4  &          & 42.0\% & 33.2\% & 50.1\% & 45.6\% & 69.2\% \\
+DS53-5  & 55.1\%  &         &         &         &         &         \\
+DS53-6  &          &         & 69.7\% & 74.7\% & 43.9\% & 86.5\% \\\hline
+DS63-7  & 100\%  &         &         &         &         &         \\
+DS63-8  & 9.9\%   & 41.3\% &         &         &         &         \\
+DS63-9  &          &         & 32.7\%  & 66.2\%  & 16.2\%  & 95.9\%  \\
+DS63-10 &          & 36.5\% & 9.9\%  & 19.0\% & 38.3\% & 10.3\% \\
+DS63-11 & 55.4\%  &         &         &         &         &         \\
+DS63-12 &          &         & 9.7\%  & 20.2\% & 11.8\% & 57.8\%\\\hline 
+\end{tabular}
+%}%
+\end{table}
+
+To evaluate the performance of models, Mann-Whitney U had been applied based on Spearman coefficients results. In our study, we test if the best estimation models obtained by dataset have the same performance (models based on FP and models based on BFCs). Table \ref{TableModelsDsc} provides descriptive statistics of the best estimation models for each dataset. The results indicated different results for each comparison; some of the comparisons shows that models based on BFCs are equivalent to the model based on FP in terms of Spearman coefficient, MdMRE and Pred25. Tests results are shown in Table \ref{TableModelsH} were datasets with similar performance are boldfaced. Our results shows that DS53-5 (models based on total FP and context variables without band size) and DS53-6 (models based on BFC and context variables without band size) presents similar performance for correlation coefficient, MdMRE and Pred25. In the same way, DS63-8 (models based on total FP and context variables with band size) and DS63-10 (models based on BFC and context variables with band size) presents similar performance. On the other way, DS53-1 (models based on total FP) and DS53-3 (models based on BFC), and DS63-7 (models based on total FP) and DS63-9 (models based on BFC) presents similar performance for Pred25. In practice, some results indicate that using effort models based on BFCs instead of UFP does not cause the accuracy of the estimates decrease. However, based on these results, future studies evaluating estimation models based on function points could consider the evaluation of models based on a subset of basic functional components (BFC).
+
+\begin{table}
+\centering
+\caption{Performance of the best Estimation Models by DataSet}
+\label{TableModelsDsc}
+%\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|r|r|r|r|r|r|r|}\hline
+&&\multicolumn{2}{c}{\textbf{CC}}& \multicolumn{2}{c}{\textbf{MdMRE}} & \multicolumn{2}{c}{\textbf{Pred25}}\\\hline
+\textbf{}&\textbf{N} & \textbf{Mean} & \textbf{Md} & \textbf{Mean} & \textbf{Md} & \textbf{Mean}& \textbf{Md}\\\hline
+DS53-1  & 56 & .846  & .846 & .431   & .425   & .218 & .205 \\
+DS53-2  & 44 & .832  & .828 & .358   & .349   & .252 & .249 \\
+DS53-3  & 56 & .822  & .821 & .469   & .475   & .209 & .202 \\
+DS53-4  & 56 & .826  & .825 & .473   & .481   & .206 & .204 \\
+DS53-5  & 46 & .832  & .829 & .367   & .354   & .255 & .255 \\
+DS53-6  & 46 & .832  & .827 & .369   & .357   & .253 & .253 \\
+DS63-7  & 56 & .783  & .782 & .631   & .638   & .184 & .180 \\
+DS63-8  & 44 & .804  & .803 & .511   & .524   & .219 & .221 \\
+DS63-9  & 56 & .764  & .763 & .685   & .680   & .174 & .168 \\
+DS63-10 & 47 & .801  & .802 & .511   & .529   & .216 & .216 \\
+DS63-11 & 46 & .830  & .827 & .367   & .356   & .254 & .254 \\
+DS63-12 & 47 & .799  & .799 & .526   & .532   & .215 & .216\\\hline 
+\end{tabular}
+%}%
+\end{table}
+
+\begin{table}
+\centering
+\caption{Wilcoxon Signed Rank Test Results}
+\label{TableModelsH}
+%\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|r|r|r|r|r|r|r|}\hline
+\multicolumn{2}{c}{}&\multicolumn{2}{c}{\textbf{CC}}& \multicolumn{2}{c}{\textbf{MdMRE}} & \multicolumn{2}{c}{\textbf{Pred25}}\\\hline
+\multicolumn{2}{c}{\textbf{DS}} & \textbf{Z} & \textbf{p} & \textbf{Z} & \textbf{p} & \textbf{Z}& \textbf{p}\\\hline
+1  & 3  & -9.125 & .000 & -3.438 & .001 & -1.743 & \textbf{.081} \\
+2  & 4  & -3.259 & .001 & -7.390 & .000 & -7.199 & .000 \\
+5  & 6  & -.301  & \textbf{.763} & -.228  & \textbf{.820} & -.407  & \textbf{.684} \\
+7  & 9  & -8.793 & .000 & -2.997 & .003 & -1.716 & \textbf{.086} \\
+8  & 10 & -1.733 & \textbf{.083} & -.643  & \textbf{.520} & -1.029 & \textbf{.304} \\
+11 & 12 & -8.382 & .000 & -8.458 & .000 & -6.309 & .000\\\hline 
+\end{tabular}
+%}%
+\end{table}
+
+%\subsection{Limitations}
+
+\section{Discussion and Conclusions} \label{sec:DiscussionConclusions}
+
+This study has evaluated the structure of COSMIC FFP base functional components and its applicability in functional size based effort estimation models. Our study reported a benchmarking experiment evaluating 600 learning schemes for 12 ISBSG R12 sub datasets in business application projects. In total, 7,200 runs were conducted and the best learning schemes were reported by dataset.
+
+The empirical study evaluated FP and BFC to determine which of these BFC are independent from each other and thus appropriate for an additive model of size, the relationships between size in FP and BFCs, and effort were also explored. After that, estimation models based on FP and BFCs were analyzed to determine the accuracy of the estimates and the best models by sub dataset.
+
+Analyzing the internal consistency of COSMIC FFP BBC evidence showed that BFCs are not independent. The analysis found correlations between all pairs of BFCs, and between BFCs and function points in which all BFC were significantly correlated with FP. In addition, results showed that all BFCs were significantly correlated with effort. The evidence suggested that some subset of COSMIC FFP base functional components (BFC) could offer an effort prediction models at least as good as the sum of all the BFCs. Besides, the analysis of the effort estimation models shows evidence that there is a positive relationship between effort and FP and between effort and BFCs.
+
+After conducting the benchmarking experiment, results confirm that different learning schemes should be selected for different sub datasets. The best performing techniques are BoxCox (BC) for data preprocessing (DP), Backward Elimination (BE) and GeneticSearch (GS) for Attribute Selection (AS), and Bagging (Bag) and LeastMedSq (LMS) for Learning Algorithms (LA). Results showed a high percentage in the selection of some BFC that can be used to construct estimation models.
+
+The comparison of models based on total function points and based on BFC indicated different results; some of the comparisons shows that models based on BFCs are equivalent to the model based on FP in terms of Spearman coefficient, MdMRE and Pred25. For example, models based on total FP and context variables without band size and models based on BFC and context variables without band size present similar performance for correlation coefficient, MdMRE and Pred25. In the same way, models based in total FP and context variables with band size and models based in BFC and context variables with band size presents similar performance. The same was presented for models based on total FP and models based on BFC, but only for the performance of Pred25. In practice, some results indicate that using effort models based on BFCs instead of UFP does not cause the accuracy of the estimates decrease. 
+
+The data shows the sensibility of the results depending of the data selection. Results showed a relation between FP and effort, and BFCs and effort. The results provide evidence to suggest that a subset of BFCs may offer an effort prediction model at least as good as FP. However, based on these results, future studies evaluating estimation models based on function points could consider the evaluation of models based on a subset of basic functional components (BFC) to corroborate first insights. More research is needed to analyze the effect of the different BFC on effort estimation. Further work could also include comparisons with related work performed with the FPA method.
+
+In practice, data mining and artificial intelligence techniques can make a contribution to the set of software effort estimation models, but these still cannot replace expert judgment. Both approaches should be viewed as complementary. The selection of a proper estimation technique can have a significant impact on the performance and it should be selected according the specific set of data used for the estimation.
+
+For a future study, a replication of the experiment using controlled datasets could be conducted to test the results of the benchmarking experiment. The results of this study are a starting point for further research in FSM methods and their base functional components. To improve this work and prove some of the theories, we would like to assess a set of simplified effort estimation models based on the preliminary results using BFCs, and context nominal attributes. Additionally, an analysis of correlations between the BFC according to development types, industry sectors, organization types, application types, language types, program languages, and different technologies will be conducted in order to examine differences with related studies. 
+
+% conference papers do not normally have an appendix
+
+% use section* for acknowledgment
+\section*{Acknowledgment}
+
+This research was supported by University of Costa Rica (No. 834-B5-A18), and Ministry of Science, Technology and Telecommunications (MICITT). Our thanks to The International Software Benchmarking Standards Group (ISBSG).
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\begin{thebibliography}{1}
+
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+\bibitem{dejaeger:2012}  
+  Dejaeger, K., Verbeke, W., Martens, D. \& Baesens, B. \emph{Data mining techniques for software effort estimation: a comparative study}. IEEE Transactions on Software Engineering, vol. 38, no. 2 (pp. 375-397). IEEE, 2012.
+  
+\bibitem{Gencel:2008}
+  Gencel, C., \emph{How to use cosmic functional size in effort estimation models?}. In Software Process and Product Measurement (pp. 196-207). Springer, 2008.
+  
+\bibitem{GencelBuglione:2008}
+  Gencel, C. \& Buglione, L. \emph{Do base functional component types affect the relationship between software functional size and effort?}. In Software Process and Product Measurement (pp. 72-85). Springer Berlin Heidelberg, 2008.
+
+\bibitem{Kitchenham:2009}
+  Kitchenham, B. \& Mendes, E. \emph{Why comparative effort prediction studies may be invalid}. In 5th international Conference on Predictor Models in Software Engineering (p. 4.). ACM, 2009.  
+  
+\bibitem{GencelBuglione:2008a}
+  Buglione, L. \& Gencel, C.  \emph{Impact of Base Functional Component Types on Software Functional Size based Effort Estimation}. In PROFES. LNCS, vol. 5089 (pp. 75–89). Springer, Heidelberg, 2008.
+
+\bibitem{Lavazza:2013}
+  L. Lavazza, S. Morasca \& G. Robiolo. \emph{Towards a simplified definition of Function Points}. Information and Software Technology, 55(10) (pp, 1796–1809). Elsevier, 2013.
+  
+\bibitem{QuesadaLopez:2016}
+  C. Quesada-L\'opez \& M. Jenkins. \emph{Function Point Structure and Applicability: A Replicated Study}. Journal of Object Technology. In Press, 2016.  
+  
+\bibitem{MurilloMorera:2016}
+  Murillo-Morera, J., Quesada-L\'oopez, C. \& Jenkins, M. \emph{An empirical validation of an automated genetic software effort prediction framework using the isbsg dataset}. In CIBSE XIX Ibero-American Conference on Software Engineering (pp. 418-431), 2016.
+
+\bibitem{QuesadaLopez:2015}
+  C. Quesada-L\'opez \& M. Jenkins. \emph{An empirical validation of function point structure and applicability: A replication study}. In CIBSE XVIII Ibero-American Conference on Software Engineering (pp 418–431), 2015.
+
+\bibitem{QuesadaLopez:2014}
+  Quesada-L\'opez, C. \& Jenkins, M. \emph{Function point structure and applicability validation using the ISBSG dataset: a replicated study}. In 8th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (pp. 66:1). ACM, 2014.
+  
+\bibitem{QuesadaLopezMurilloMorera:2016}  
+  Quesada-L\'opez, C., Murillo-Morera, J., Castro-Herrera C. \& Jenkins, M. \emph{Benchmarking Software Effort Prediction Models: An Automated Prototype Tool (Tecnhical Research Report Ref. 01-07-16-001 No. 834-B5-A18)}. Center for ICT Research, University of Costa Rica, 2016. Retrieved from: https://goo.gl/vj1qCa.
+  
+\bibitem{ISOP1:2007} 
+  ISO. \emph{ISO/IEC 14143-1: Information technology – Software measurement – Functional size measurement. Part 1: Definition of concepts}. Standard, International Organization for Standardization, Geneva, CH, 2007.  
+  
+\bibitem{Albrecht:1979}
+  Albrecht, A.J. \emph{Measuring application development productivity}. In Proceedings of the Joint SHARE/GUIDE/IBM Application Development Symposium, vol. 10 (pp. 83–92), IBM, 1979.
+
+\bibitem{ISO:2009} 
+  ISO. \emph{ISO/IEC 20926:2009 Software and systems engineering - Software measurement - IFPUG functional size measurement method}. Standard, International Organization for Standardization, Geneva, CH, 2009. 
+
+\bibitem{COSMIC:2007}
+  The Common Software Measurement International Consortium (COSMIC). COSMICv. 3.0, Measurement Manual, 2007.
+
+\bibitem{ISO:2003} 
+  ISO. \emph{ISO/IEC 19761:2003 Software Engineering – COSMIC-FFP: A Functional Size Measurement Method}. International Organization for Standardization, Geneva, CH, 2003.
+  
+\bibitem{Wohlin:2012} 
+  Wohlin, C., Runeson, P., Host, M., Ohlsson, M. C., Regnell, B. \& Wesslen, A. \emph{Experimentation in software engineering}. Springer Science \& Business Media, 2012.
+  
+\bibitem{Cook:2000}   
+  Cook, D.R. \emph{Detection of Influential Observation in Linear Regression}. Technometrics, 19(1) (pp. 15–18), 1977.
+  
+\bibitem{hall2009weka}   
+  Hall, M. \& Hall, F. \emph{The WEKA Data Mining Software: An Update}. SIGKDD Explor, vol. 11, no. 1, (pp. 10-18). ACM, 2009.  
+
+\end{thebibliography}
+
+% that's all folks
+\end{document}
+
+

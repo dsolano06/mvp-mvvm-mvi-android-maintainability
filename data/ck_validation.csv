@@ -1,0 +1,4 @@
+metric,n_classes,spearman_rho,p_value
+CBO,1204,0.826,0.0
+WMC,1204,0.845,0.0
+LCOM,704,0.58,0.0

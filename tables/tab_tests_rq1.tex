@@ -1,0 +1,20 @@
+\begin{table}[!t]
+\centering
+\caption{RQ1 -- Kruskal-Wallis and pairwise Mann-Whitney (Holm)}
+\label{tab:tests_rq1}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|l|l|r|r|r|l|}
+\hline
+\textbf{Metric} & \textbf{Pair} & \textbf{$p_{KW}$} & \textbf{$p_{Holm}$} & \textbf{$\delta$} & \textbf{Effect} \\ \hline
+CBO & MVP vs MVVM & 0.069 & 0.080 & -0.67 & large \\ \hline
+CBO & MVP vs MVI & 0.069 & 0.164 & -0.55 & large \\ \hline
+CBO & MVVM vs MVI & 0.069 & 0.715 & 0.10 & negligible \\ \hline
+LCOM & MVP vs MVVM & 0.179 & 0.421 & -0.30 & small \\ \hline
+LCOM & MVP vs MVI & 0.179 & 0.421 & -0.48 & large \\ \hline
+LCOM & MVVM vs MVI & 0.179 & 0.421 & -0.36 & medium \\ \hline
+WMC & MVP vs MVVM & 0.273 & 0.398 & -0.46 & medium \\ \hline
+WMC & MVP vs MVI & 0.273 & 0.783 & 0.10 & negligible \\ \hline
+WMC & MVVM vs MVI & 0.273 & 0.493 & 0.30 & small \\ \hline
+\end{tabular}}
+\\[2pt] \footnotesize{* significant at $\alpha=0.05$ after Holm correction.}
+\end{table}

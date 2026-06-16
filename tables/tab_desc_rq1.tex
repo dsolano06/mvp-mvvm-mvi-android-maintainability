@@ -1,0 +1,22 @@
+\begin{table}[!t]
+\centering
+\caption{Presentation-layer structural metrics by pattern (per-repository medians)}
+\label{tab:desc_rq1}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|l|l|r|r|r|r|r|r|}
+\hline
+\textbf{Metric} & \textbf{Pattern} & \textbf{n} & \textbf{Median} & \textbf{Mean} & \textbf{IQR} & \textbf{Min} & \textbf{Max} \\ \hline
+\multirow{3}{*}{CBO}  & MVP  & 6  & 6.50  & 6.67  & 4.00  & 3.00 & 11.00 \\
+                      & MVVM & 12 & 10.50 & 12.25 & 6.00  & 5.50 & 22.00 \\
+                      & MVI  & 10 & 11.00 & 11.45 & 6.88  & 3.00 & 19.50 \\ \hline
+\multirow{3}{*}{LCOM} & MVP  & 6  & 0.85  & 0.90  & 0.18  & 0.64 & 1.35  \\
+                      & MVVM & 11 & 0.91  & 0.98  & 0.10  & 0.82 & 1.67  \\
+                      & MVI  & 9  & 0.97  & 1.02  & 0.07  & 0.66 & 1.50  \\ \hline
+\multirow{3}{*}{WMC}  & MVP  & 6  & 5.00  & 6.00  & 5.00  & 3.00 & 11.00 \\
+                      & MVVM & 12 & 12.50 & 17.58 & 11.88 & 1.00 & 84.00 \\
+                      & MVI  & 10 & 4.00  & 7.80  & 8.13  & 2.00 & 21.00 \\ \hline
+\end{tabular}}
+\\[2pt] \footnotesize{Higher CBO, LCOM-HS and WMC all indicate worse
+maintainability. LCOM is defined for fewer repositories because state holders
+with a single method have undefined cohesion.}
+\end{table}

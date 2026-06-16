@@ -1,0 +1,17 @@
+\begin{table}[!t]
+\centering
+\caption{RQ2 -- Change-proneness tests}
+\label{tab:tests_rq2}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|l|l|r|r|r|l|}
+\hline
+\textbf{Metric} & \textbf{Pair} & \textbf{$p_{KW}$} & \textbf{$p_{Holm}$} & \textbf{$\delta$} & \textbf{Effect} \\ \hline
+Commits/month & MVP vs MVVM & 0.776 & 1.000 & -0.11 & negligible \\ \hline
+Commits/month & MVP vs MVI & 0.776 & 1.000 & -0.20 & small \\ \hline
+Commits/month & MVVM vs MVI & 0.776 & 1.000 & -0.12 & negligible \\ \hline
+Churn/SLOC & MVP vs MVVM & 0.544 & 1.000 & -0.08 & negligible \\ \hline
+Churn/SLOC & MVP vs MVI & 0.544 & 1.000 & 0.17 & small \\ \hline
+Churn/SLOC & MVVM vs MVI & 0.544 & 0.829 & 0.28 & small \\ \hline
+\end{tabular}}
+\\[2pt] \footnotesize{* significant at $\alpha=0.05$ after Holm correction.}
+\end{table}

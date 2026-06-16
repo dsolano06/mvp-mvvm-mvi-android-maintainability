@@ -1,0 +1,17 @@
+repos/
+__pycache__/
+*.pyc
+tools/ck.jar
+tools/tectonic_bin/
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.zip
+*.docx
+MiPaper_overleaf/
+data/*.log
+data/_probe.txt
+__MACOSX/
+figures/*.png

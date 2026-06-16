@@ -1,0 +1,12 @@
+requests
+pandas
+numpy
+scipy
+statsmodels
+matplotlib
+seaborn
+tree_sitter
+tree_sitter_language_pack
+cliffs-delta
+plotly
+jinja2
